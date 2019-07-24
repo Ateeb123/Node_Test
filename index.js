@@ -73,7 +73,7 @@ app.post('/webhook', (req, res) => {
 
     let bodyy = req.body;
     console.log(bodyy);
-    console.log(bodyy.fulfillmentMessages);
+    console.log(bodyy.queryResult.fulfillmentMessages);
 
 
     console.log('CHECK');
