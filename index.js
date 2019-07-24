@@ -69,10 +69,6 @@ app.post('/webhook', (req, res) => {
   app.post('/webhook2', (req, res) => {
 
     // Your verify token. Should be a random string.
-    console.log(req);
-    console.log('CHECK');
-    console.log('CHECK');
-    console.log('CHECK');
 
     let bodyy = req.body;
     console.log(bodyy);
@@ -84,7 +80,8 @@ app.post('/webhook', (req, res) => {
     console.log('CHECK');
     
     console.log(bodyy.queryResult.fulfillmentMessages);
-    console.log(bodyy.queryResult.fulfillmentMessages[0].payload);
+    console.log(bodyy.queryResult.fulfillmentMessages[0].payload.facebook.attachment);
+    console.log(bodyy.queryResult.fulfillmentMessages[0].payload.facebook.attachment.payload);
 
 
 
