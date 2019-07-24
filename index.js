@@ -69,7 +69,10 @@ app.post('/webhook', (req, res) => {
   app.post('/webhook2', (req, res) => {
 
     // Your verify token. Should be a random string.
-
+    console.log(req);
+    console.log('CHECK');
+    console.log('CHECK');
+    console.log('CHECK');
 
     let bodyy = req.body;
     console.log(bodyy);
