@@ -90,52 +90,7 @@ app.post('/webhook', (req, res) => {
 
     console.log('CHECK');
  
-      
-    res.body = {
-      "fulfillmentText": "This is a text response",
-      "fulfillmentMessages": [
-        {
-          "card": {
-            "title": "card title",
-            "subtitle": "card text",
-            "imageUri": "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png",
-            "buttons": [
-              {
-                "text": "button text",
-                "postback": "https://assistant.google.com/"
-              }
-            ]
-          }
-        }
-      ],
-      "source": "example.com",
-      "payload": {
-
-        "facebook": {
-          "text": "Hello, Facebook!"
-        },
-
-      },
-      "outputContexts": [
-        {
-          "name": "projects/${PROJECT_ID}/agent/sessions/${SESSION_ID}/contexts/context name",
-          "lifespanCount": 5,
-          "parameters": {
-            "param": "param value"
-          }
-        }
-      ],
-      "followupEventInput": {
-        "name": "event name",
-        "languageCode": "en-US",
-        "parameters": {
-          "param": "param value"
-        }
-      }
-    }
-      
-      
-  return res;
+    res.status(200).send('EVENT RECEIVED');
 
   });
 
