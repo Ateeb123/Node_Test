@@ -72,7 +72,7 @@ app.post('/webhook', (req, res) => {
 
 
     let bodyy = res.body;
-    console.log(bodyy);
+    console.log(res);
 
 
     console.log('CHECK');
