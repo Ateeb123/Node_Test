@@ -98,56 +98,64 @@ app.post('/webhook', (req, res) => {
 
     console.log('CHECK');
       
-   let responseJson = {};
-
-
-            responseJson.fulfillmentText = 'Available drones here from fulfillment';
-            let richResponses = [
-                {
-                    "text": {
-                        "text": [
-                            "Here is a list of all available Beginners Drone"
-                        ]
-                    },
-                    "platform": "FACEBOOK"
-                },
-                {
-                    "card": {
-                        "title": "ALTAIR AERIAL AA108",
-                        "subtitle": "FOR YOUNG DRONE ENTHUSIASTS & BEGINNERS",
-                        "imageUri": "https://mydeardrone.com/wp-content/uploads/2018/11/Altair-AA108-Camera-Drone-RC-Quadcopter-w-720p-HD-FPV-Camera-VR-Headless-Mode-Altitude-Hold-3-Skill-Modes-Great-for-Kids-Beginners-Easy-Fly-Indoor-Drone-2-Batteries.jpg",
-                        "buttons": [
-                            {
-                                "text": "View more",
-                                "postback": "https://mydeardrone.com/types/beginner/"
-                            }
-                        ]
-                    },
-                    "platform": "FACEBOOK"
-                },
-                {
-                    "card": {
-                        "title": "UDI U818A HD+",
-                        "subtitle": "BEST BEGINNER DRONE",
-                        "imageUri": "https://mydeardrone.com/wp-content/uploads/2018/03/Force1-UDI-U818A-Camera-Drone-for-Kids-HD-Drone-with-Camera-for-Beginners-720p-RC-Camera-Drones-w-360%C2%B0-Flips-Extra-Battery.jpg",
-                        "buttons": [
-                            {
-                                "text": "View more",
-                                "postback": "https://mydeardrone.com/types/beginner/"
-                            }
-                        ]
-                    },
-                    "platform": "FACEBOOK"
+    response = json.dumps {{
+      "fulfillmentText": "This is a text response",
+      "fulfillmentMessages": [
+        {
+          "card": {
+            "title": "card title",
+            "subtitle": "card text",
+            "imageUri": "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png",
+            "buttons": [
+              {
+                "text": "button text",
+                "postback": "https://assistant.google.com/"
+              }
+            ]
+          }
+        }
+      ],
+      "source": "example.com",
+      "payload": {
+        "google": {
+          "expectUserResponse": true,
+          "richResponse": {
+            "items": [
+              {
+                "simpleResponse": {
+                  "textToSpeech": "this is a simple response"
                 }
-            ];
-            responseJson.fulfillmentMessages = richResponses;
-           
-            responseJson.fulfillmentText = 'Unknown action';
+              }
+            ]
+          }
+        },
+        "facebook": {
+          "text": "Hello, Facebook!"
+        },
+        "slack": {
+          "text": "This is a text response for Slack."
+        }
+      },
+      "outputContexts": [
+        {
+          "name": "projects/${PROJECT_ID}/agent/sessions/${SESSION_ID}/contexts/context name",
+          "lifespanCount": 5,
+          "parameters": {
+            "param": "param value"
+          }
+        }
+      ],
+      "followupEventInput": {
+        "name": "event name",
+        "languageCode": "en-US",
+        "parameters": {
+          "param": "param value"
+        }
+      }
     }
-
-    res.json(responseJson);
+      }
       
-      
+  return response;
       
   });
 
