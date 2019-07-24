@@ -89,9 +89,7 @@ app.post('/webhook', (req, res) => {
     console.log('CHECK');
 
     console.log('CHECK');
- 
-    res.status(200).send('EVENT RECEIVED');
-
+    console.log(req.body);
   });
 
 
