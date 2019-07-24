@@ -38,8 +38,12 @@ app.post('/webhook', (req, res) => {
   app.get('/webhook', (req, res) => {
 
     // Your verify token. Should be a random string.
-    let VERIFY_TOKEN = "123456789001"
+    let VERIFY_TOKEN = "123456789001";
+    console.log('CHECK');
+    console.log('CHECK');
+    console.log('CHECK');
 
+    console.log('CHECK');
     
       
     // Parse the query params
@@ -67,7 +71,20 @@ app.post('/webhook', (req, res) => {
 
 
 
+  app.get('/webhook2', (req, res) => {
 
+    // Your verify token. Should be a random string.
+  
+    console.log('CHECK');
+    console.log('CHECK');
+    console.log('CHECK');
+
+    console.log('CHECK');
+    
+      
+  
+
+  });
 
 
 
