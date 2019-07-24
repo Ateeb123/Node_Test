@@ -145,7 +145,7 @@ app.post('/webhook', (req, res) => {
             responseJson.fulfillmentText = 'Unknown action';
     }
 
-    response.json(responseJson);
+    res.json(responseJson);
       
       
       
