@@ -100,8 +100,7 @@ app.post('/webhook', (req, res) => {
       
    let responseJson = {};
 
-    switch (action) {
-        case "buy.drone-types":
+
             responseJson.fulfillmentText = 'Available drones here from fulfillment';
             let richResponses = [
                 {
@@ -142,8 +141,7 @@ app.post('/webhook', (req, res) => {
                 }
             ];
             responseJson.fulfillmentMessages = richResponses;
-            break;
-        default:
+           
             responseJson.fulfillmentText = 'Unknown action';
     }
 
