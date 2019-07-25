@@ -66,7 +66,7 @@ app.post('/webhook', (req, res) => {
 
 
 
-  app.get('/webhook2', (req, res) => {
+  app.post('/webhook2', (req, res) => {
 
     // Your verify token. Should be a random string.
 
