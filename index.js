@@ -97,11 +97,7 @@ app.post('/webhook', (req, res) => {
     console.log('CHECK');
 
     console.log('CHECK');
-      
-    let response ={
-        'fulfillmentText': 'response from webhook'
-        }
-    return response
+    res.send({ 'hello_1': 'world' });
   });
 
 
