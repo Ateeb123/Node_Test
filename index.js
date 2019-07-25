@@ -98,9 +98,9 @@ app.post('/webhook', (req, res) => {
 
     console.log('CHECK');
       
-    response = JSON.dumps({
+    response ={
         'fulfillmentText': 'response from webhook'
-        })
+        }
     return response
   });
 
