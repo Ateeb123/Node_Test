@@ -81,8 +81,11 @@ app.post('/webhook', (req, res) => {
     
 //     console.log(bodyy.queryResult.fulfillmentMessages);
 //     console.log(bodyy.queryResult.fulfillmentMessages[0].payload.facebook.attachment);
+    console.log(bodyy.queryResult.fulfillmentMessages[0]); 
+    console.log(bodyy.queryResult.fulfillmentMessages[0].payload);
+    console.log(bodyy.queryResult.fulfillmentMessages[0].payload.facebook);
+    console.log(bodyy.queryResult.fulfillmentMessages[0].payload.facebook.attachment);
     console.log(bodyy.queryResult.fulfillmentMessages[0].payload.facebook.attachment.payload);
-
   
     console.log('CHECK');
     console.log('CHECK');
