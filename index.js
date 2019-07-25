@@ -98,7 +98,7 @@ app.post('/webhook', (req, res) => {
 
     console.log('CHECK');
     res.send({ 'hello_1': 'world' });
-    agent.add('My name is DIalogflow');
+
   });
 
 
